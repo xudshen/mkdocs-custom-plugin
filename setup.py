@@ -1,13 +1,22 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name='mkdocs-custom-plugin',
+    name='my-mkdocs-plugin',
     version='0.0.1',
     description='Some Desc',
-    url='git@github.com:rfschubert/ptolemaios-sdk-package.git',
-    author='Xudong Shen',
+    author='xudshen',
     author_email='some@some.com',
-    license='unlicense',
-    packages=['xudshen'],
+    license='MIT',
+    python_requires='>=3.6',
+    install_requires=[
+        'setuptools>=18.5',
+        'mkdocs>=1.0.4',
+    ],
+    packages=find_packages(exclude=['*.tests']),
+    entry_points={
+        'mkdocs.plugins': [
+            'mymkdocsplugin = my_mkdocs_plugin.plugin:MyMkDocsPlugin'
+        ]
+    },
     zip_safe=False
 )
