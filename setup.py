@@ -10,6 +10,7 @@ setup(
     python_requires='>=3.6',
     install_requires=[
         'setuptools>=18.5',
+        'beautifulsoup4>=4.6.3',
         'mkdocs>=1.0.4',
     ],
     packages=find_packages(exclude=['*.tests']),
