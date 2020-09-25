@@ -26,7 +26,7 @@ $(document).on('load', function () {
 kotlinPlaygroundOptions = {
 };
 document.addEventListener('DOMContentLoaded', function() {
-  ArrowPlayground('.kotlin-run', kotlinPlaygroundOptions);
+  KotlinPlayground('.kotlin-run', kotlinPlaygroundOptions);
 });
             """
             soup.body.append(new_tag)
