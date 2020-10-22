@@ -3,11 +3,11 @@ from mkdocs.plugins import BasePlugin
 
 
 class MyMkDocsPlugin(BasePlugin):
+
     def on_post_page(self, output_content, config, **kwargs):
         soup = BeautifulSoup(output_content, 'html.parser')
-        mermaids = soup.find_all("div", class_="mermaids")
+        mermaids = soup.find_all("div", class_="mermaid")
         kotlin_runs = soup.find_all("div", class_="kotlin-run")
-
         if mermaids:
             new_tag = soup.new_tag("script", src="https://code.jquery.com/jquery-3.4.1.min.js")
             soup.body.append(new_tag)
